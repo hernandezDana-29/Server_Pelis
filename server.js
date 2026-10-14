@@ -10,7 +10,9 @@ server.get('/', (req, res) => {
   res.send('API votación pelis funcionando');
 });
 
-
+app.listen(PORT, () => {
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+});
 
 const peliculas = [
   { id: 1, Titulo: "Inception", Desccripcion: 'Una película de ciencia ficción dirigida por Christopher Nolan', votos: 0 }, 
