@@ -8,11 +8,18 @@ server.use((req, res, next) => {
   next();
 });
 
-
 const PORT = process.env.PORT || 3000;
 
 server.get('/', (req, res) => {
   res.send('API votación pelis funcionando');
+});
+
+server.get('/hola', (req, res) => {
+  res.json([{ Mensaje: 'Encontrado' }]);
+});
+
+server.listen(PORT, () => {
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
 
 server.get('/hola', (req, res) => {

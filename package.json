@@ -19,6 +19,7 @@
   "homepage": "https://github.com/hernandezDana-29/Server_Pelis#readme",
   "type": "commonjs",
   "dependencies": {
-    "express": "^5.3.0"
+    "express": "^5.3.0",
+    "nodemon": "^3.1.14"
   }
 }
