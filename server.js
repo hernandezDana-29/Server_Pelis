@@ -21,7 +21,7 @@ server.get('/hola', (req, res) => {
 
 });
 
-app.listen(PORT, () => {
+ server.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
 
