@@ -42,3 +42,7 @@ const peliculas = [
 
 ];
 
+server.get('/peliculas', (req, res) => {
+  res.json(peliculas);
+});
+
