@@ -38,10 +38,8 @@ server.get('/peliculas', (req, res) => {
 });
 
 app.post('/peliculas/votos', (req, res) => {
-console.log("Voto registrado correctamente.", req.body);
+console.log("Voto registrado correctamente.");
 votos.push(nueva);
-res.status(201).json(nueva);
-
   if (!id) {
     return res.status(400).json({ mensaje: 'Ese id no existe' });
   }
