@@ -3,6 +3,7 @@ import express from 'express';
 const server = express();
 server.use(express.json());
 
+// Middleware para registrar peticiones
 server.use((req, res, next) => {
   console.log(`${new Date().toLocaleTimeString()} ${req.method} ${req.url}`);
   next();
@@ -10,6 +11,7 @@ server.use((req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
 
+// Rutas
 server.get('/', (req, res) => {
   res.send('API votación pelis funcionando');
 });
@@ -18,17 +20,8 @@ server.get('/hola', (req, res) => {
   res.json([{ Mensaje: 'Encontrado' }]);
 });
 
+// Iniciar servidor (solo una vez)
 server.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
-
-server.get('/hola', (req, res) => {
-  res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify([{ Mensaje: 'Encontrado' }]));
-
-});
-
- server.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
 
