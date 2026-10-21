@@ -11,6 +11,10 @@ server.use((req, res, next) => {
 const PORT = process.env.PORT || 3000;
 
 
+
+
+
+
 let peliculas = [
   { id: 1, Titulo: "Inception", Desccripcion: 'Una película de ciencia ficción dirigida por Christopher Nolan', votos: 0 }, 
   { id: 2, Titulo: "Orgullo y prejuicio", Desccripcion: 'Una pelicula de romance y drama basada en un libro', votos: 100 },
