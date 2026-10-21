@@ -3,7 +3,7 @@ import express from 'express';
 const server = express();
 server.use(express.json());
 
-// Middleware para registrar peticiones
+
 server.use((req, res, next) => {
   console.log(`${new Date().toLocaleTimeString()} ${req.method} ${req.url}`);
   next();
@@ -11,7 +11,7 @@ server.use((req, res, next) => {
 
 const PORT = process.env.PORT || 3000;
 
-// Rutas
+
 server.get('/', (req, res) => {
   res.send('API votación pelis funcionando');
 });
@@ -20,10 +20,8 @@ server.get('/hola', (req, res) => {
   res.json([{ Mensaje: 'Encontrado' }]);
 });
 
-// Iniciar servidor (solo una vez)
-server.listen(PORT, () => {
-  console.log(`Servidor escuchando en http://localhost:${PORT}`);
-});
+
+
 
 const peliculas = [
   { id: 1, Titulo: "Inception", Desccripcion: 'Una película de ciencia ficción dirigida por Christopher Nolan', votos: 0 }, 
@@ -39,3 +37,17 @@ server.get('/peliculas', (req, res) => {
   res.json(peliculas);
 });
 
+app.post('/peliculas/votos', (req, res) => {
+console.log("Voto registrado correctamente.", req.body);
+votos.push(nueva);
+res.status(201).json(nueva);
+
+  if (!id) {
+    return res.status(400).json({ mensaje: 'Ese id no existe' });
+  }
+});
+
+
+server.listen(PORT, () => {
+  console.log(`Servidor escuchando en http://localhost:${PORT}`);
+});
